@@ -1,8 +1,8 @@
 public class Main {
     public static void main(String[] args) {
-        Worker.OnTaskDoneListener listener = System.out::println;
-        Worker.OnTaskErrorListener Onlistener = System.out::println;
-        Worker worker = new Worker(listener, Onlistener);
+        OnTaskDoneListener listener = System.out::println;
+        OnTaskErrorListener onlistener = System.out::println;
+        Worker worker = new Worker(listener, onlistener);
         worker.start();
     }
 }

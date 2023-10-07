@@ -1,4 +1,4 @@
-public class Worker implements OnTaskErrorListener, OnTaskDoneListener{
+public class Worker{
 
     private OnTaskDoneListener callback;
     private OnTaskErrorListener errorCallback;
@@ -12,23 +12,12 @@ public class Worker implements OnTaskErrorListener, OnTaskDoneListener{
         for (int i = 0; i < 100; i++) {
 
             if (i == 33) {
-                errorCallback.OnError("ERRROR!!! " + i);
+                errorCallback.onError("ERRROR!!! " + i);
             } else {
                 callback.onDone("Task " + i + " is done");
             }
         }
 
-    }
-
-
-    public interface OnTaskDoneListener {
-        void onDone(String result);
-    }
-
-
-
-    public interface OnTaskErrorListener {
-        void OnError(String s);
     }
 
 }
